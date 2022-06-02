@@ -192,3 +192,11 @@
     language: python
     types: [text]
     stages: [commit, push, manual]
+-   id: dns-serial-fixer
+    name: fix DNS Serial
+    description: ensures that a DNS Zones gets updated correctly
+    entry: pre_commit_hooks/dns-serial-fixer.sh
+    language: script
+    # types: [text]
+    files: '^zones\/.*'
+    stages: [commit, push, manual]
